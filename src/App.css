@@ -1,38 +1,216 @@
-.App {
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.app-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.restaurant-title {
+  margin: 0;
+  font-size: 2.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-description {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.version-badge {
+  display: inline-block;
+  background-color: #e74c3c;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Status Card */
+.status-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.status-success {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.status-warning {
+  color: #f39c12;
+}
+
+/* Menu Section */
+.menu-section {
+  margin: 2rem 0;
+}
+
+.menu-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item h3 {
+  margin: 0 0 0.5rem;
+  color: #2c3e50;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.item-description {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
+
+.no-items {
+  text-align: center;
+  color: #7f8c8d;
+}
+
+/* Order Section */
+.order-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.order-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-button:hover {
+  background-color: #c0392b;
+}
+
+.order-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.order-success, .order-error {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border-radius: 4px;
+}
+
+.order-success {
+  background-color: #d5f5e3;
+  color: #27ae60;
+}
+
+.order-error {
+  background-color: #fadbd8;
+  color: #e74c3c;
+}
+
+/* Loading Spinner */
+.loading-spinner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 200px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #e74c3c;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+  background-color: #fadbd8;
+  color: #e74c3c;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #2c3e50;
   color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .restaurant-title {
+    font-size: 1.8rem;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
   }
 }
