@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // IMPORTANT: Replace this with your actual S3 bucket name
-        S3_BUCKET = 'your-unique-restaurant-frontend-bucket'
+        S3_BUCKET = 'kb-restaurant-frontend-bucket-2025'
     }
 
     stages {
